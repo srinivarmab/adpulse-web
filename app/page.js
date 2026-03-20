@@ -173,7 +173,7 @@ export default function Page() {
 
             <div style={{ marginTop: "20px" }}>
               <a
-                href="https://wa.me/919876543210?text=Hi%20I%20want%20Google%20Ads%20management"
+                href="https://wa.me/918142140696?text=Hi%20I%20want%20Google%20Ads%20management"
                 style={{
                   display: "inline-block",
                   padding: "12px 24px",
