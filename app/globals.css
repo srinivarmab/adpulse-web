@@ -35,3 +35,24 @@ a{text-decoration:none;color:inherit} button{font:inherit}
     display: none !important;
   }
 }
+/* Desktop */
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: flex !important;
+  }
+
+  .menu-btn {
+    display: none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .desktop-menu {
+    display: none !important;
+  }
+
+  .menu-btn {
+    display: block !important;
+  }
+}
