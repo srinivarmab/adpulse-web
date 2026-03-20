@@ -22,6 +22,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
+
       <section className="hero">
         <div className="container hero-grid">
           <div>
@@ -35,10 +36,10 @@ export default function Page() {
               <a className="btn btn-primary" href="/login">Start Free AI Audit</a>
               <a className="btn btn-secondary" href="#preview">See Product Preview</a>
             </div>
-            <div style={{display:"flex",gap:18,flexWrap:"wrap",marginTop:22,color:"#64748b",fontSize:14}}>
-              <span>✓ Detect waste fast</span>
-              <span>✓ Improve ROAS</span>
-              <span>✓ Share polished reports</span>
+            <div style={{ display: "flex", gap: 18, flexWrap: "wrap", marginTop: 22, color: "#64748b", fontSize: 14 }}>
+              <span>• Detect waste fast</span>
+              <span>• Improve ROAS</span>
+              <span>• Share polished reports</span>
             </div>
           </div>
           <HeroPreview />
@@ -57,7 +58,7 @@ export default function Page() {
               <div className="card feature-card" key={title}>
                 <div className="icon-box">{i + 1}</div>
                 <h3>{title}</h3>
-                <p style={{color:"#64748b",lineHeight:1.7,margin:0}}>{text}</p>
+                <p style={{ color: "#64748b", lineHeight: 1.7, margin: 0 }}>{text}</p>
               </div>
             ))}
           </div>
@@ -82,13 +83,33 @@ export default function Page() {
           </p>
           <div className="grid-4">
             {plans.map(([name, price, text]) => (
-              <div className="card price-card" key={name} style={name === "Professional" ? {border:"2px solid rgba(37,99,235,.22)"} : {}}>
-                <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:10}}>
-                  <h3 style={{margin:0}}>{name}</h3>
-                  {name === "Professional" ? <span style={{padding:"5px 10px",borderRadius:999,background:"rgba(37,99,235,.1)",color:"#2563eb",fontSize:12,fontWeight:800}}>Most Popular</span> : null}
+              <div
+                className="card price-card"
+                key={name}
+                style={name === "Professional" ? { border: "2px solid rgba(37,99,235,.22)" } : {}}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
+                  <h3 style={{ margin: 0 }}>{name}</h3>
+                  {name === "Professional" ? (
+                    <span
+                      style={{
+                        padding: "5px 10px",
+                        borderRadius: 999,
+                        background: "rgba(37,99,235,.1)",
+                        color: "#2563eb",
+                        fontSize: 12,
+                        fontWeight: 800
+                      }}
+                    >
+                      Most Popular
+                    </span>
+                  ) : null}
                 </div>
-                <div style={{color:"#64748b",marginTop:10}}>{text}</div>
-                <div style={{fontSize:38,fontWeight:800,margin:"16px 0"}}>{price}<span style={{fontSize:14,color:"#64748b"}}>/mo</span></div>
+                <div style={{ color: "#64748b", marginTop: 10 }}>{text}</div>
+                <div style={{ fontSize: 38, fontWeight: 800, margin: "16px 0" }}>
+                  {price}
+                  <span style={{ fontSize: 14, color: "#64748b" }}>/mo</span>
+                </div>
                 <a className={name === "Professional" ? "btn btn-primary" : "btn btn-secondary"} href="/login">
                   Choose {name}
                 </a>
@@ -98,32 +119,18 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="card" style={{padding:34,display:"flex",justifyContent:"space-between",gap:24,alignItems:"center",flexWrap:"wrap"}}>
-            <div>
-              <h2 style={{margin:0}}>Stop wasting ad spend today.</h2>
-              <p style={{margin:"8px 0 0",color:"#64748b",lineHeight:1.7}}>
-                Run your first audit, surface the most expensive problems, and make budget decisions with more confidence.
-              </p>
-            </div>
-            <div style={{display:"flex",gap:12,flexWrap:"wrap"}}>
-              <a className="btn btn-primary" href="/login">Start Free AI Audit</a>
-              <a className="btn btn-secondary" href="#preview">See Dashboard</a>
-            </div>
-          </div>
-        </div>
-      </section>
-                   <section style={{
-        padding: "60px 20px",
-        background: "linear-gradient(135deg,#0f172a,#1e293b)",
-        color: "#fff",
-        borderRadius: "20px",
-        marginTop: "40px"
-      }}>
+      <section
+        style={{
+          padding: "60px 20px",
+          background: "linear-gradient(135deg,#0f172a,#1e293b)",
+          color: "#fff",
+          borderRadius: "20px",
+          margin: "40px auto 0",
+          maxWidth: "1200px"
+        }}
+      >
         <div style={{ maxWidth: "1000px", margin: "0 auto", textAlign: "center" }}>
-          
-          <h2 style={{ fontSize: "32px", fontWeight: "700" }}>
+          <h2 style={{ fontSize: "32px", fontWeight: "700", margin: 0 }}>
             Fully Managed Google Ads (Done For You)
           </h2>
 
@@ -131,46 +138,88 @@ export default function Page() {
             Let our experts manage and scale your campaigns while you focus on growth.
           </p>
 
-          <div style={{
-            marginTop: "30px",
-            background: "#111827",
-            padding: "30px",
-            borderRadius: "16px",
-            border: "1px solid #334155"
-          }}>
-            
-            <h3 style={{ fontSize: "24px", fontWeight: "600" }}>
+          <div
+            style={{
+              marginTop: "30px",
+              background: "#111827",
+              padding: "30px",
+              borderRadius: "16px",
+              border: "1px solid #334155"
+            }}
+          >
+            <h3 style={{ fontSize: "24px", fontWeight: "600", marginTop: 0 }}>
               Premium Managed Plan
             </h3>
 
-            <ul style={{ marginTop: "20px", lineHeight: "1.8" }}>
-              <li>✔ Full Google Ads Setup</li>
-              <li>✔ Weekly Optimization</li>
-              <li>✔ ROAS Growth Strategy</li>
+            <p style={{ marginTop: "10px", color: "#94a3b8" }}>
+              Best for brands spending $1,000+/month on ads
+            </p>
+
+            <ul
+              style={{
+                marginTop: "20px",
+                lineHeight: "1.8",
+                listStyle: "none",
+                padding: 0
+              }}
+            >
+              <li>✔ Full Google Ads Account Setup</li>
+              <li>✔ Weekly Optimization & Scaling</li>
+              <li>✔ Conversion Tracking Setup</li>
+              <li>✔ Negative Keyword Optimization</li>
+              <li>✔ ROAS Improvement Strategy</li>
+              <li>✔ Dedicated Expert Support</li>
             </ul>
 
             <div style={{ marginTop: "20px" }}>
-              <a href="https://wa.me/919876543210"
+              <a
+                href="https://wa.me/919876543210?text=Hi%20I%20want%20Google%20Ads%20management"
                 style={{
+                  display: "inline-block",
                   padding: "12px 24px",
                   background: "#22c55e",
                   color: "#000",
-                  borderRadius: "8px"
-                }}>
-                Contact on WhatsApp
+                  borderRadius: "8px",
+                  fontWeight: "700",
+                  textDecoration: "none"
+                }}
+              >
+                Book Strategy Call
               </a>
             </div>
-
           </div>
         </div>
       </section>
 
-    </div>
-  )
-}
+      <section className="section">
+        <div className="container">
+          <div
+            className="card"
+            style={{
+              padding: 34,
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 24,
+              alignItems: "center",
+              flexWrap: "wrap"
+            }}
+          >
+            <div>
+              <h2 style={{ margin: 0 }}>Stop wasting ad spend today.</h2>
+              <p style={{ margin: "8px 0 0", color: "#64748b", lineHeight: 1.7 }}>
+                Run your first audit, surface the most expensive problems, and make budget decisions with more confidence.
+              </p>
+            </div>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <a className="btn btn-primary" href="/login">Start Free AI Audit</a>
+              <a className="btn btn-secondary" href="#preview">See Dashboard</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <footer className="footer">
-        <div className="container" style={{display:"flex",justifyContent:"space-between",gap:12,flexWrap:"wrap"}}>
+        <div className="container" style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
           <div><strong>AdPulse AI</strong> — AI-powered advertising intelligence</div>
           <div>Home · Features · Pricing · Login</div>
         </div>
