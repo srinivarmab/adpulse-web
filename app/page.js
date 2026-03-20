@@ -243,6 +243,33 @@ export default function Page() {
           </div>
         </div>
       </section>
+                  <form 
+  action="https://formsubmit.co/srinivarmab@gmail.com" 
+  method="POST"
+  style={{ display: "grid", gap: 16, marginTop: 20 }}
+>
+
+  <input type="hidden" name="_subject" value="New AdPulse Lead 🚀" />
+  <input type="hidden" name="_captcha" value="false" />
+
+  <input name="name" type="text" placeholder="Your Name" style={inputStyle} />
+  <input name="email" type="email" placeholder="Your Email" style={inputStyle} />
+  <input name="website" type="text" placeholder="Website URL" style={inputStyle} />
+
+  <select name="budget" style={inputStyle} defaultValue="">
+    <option value="" disabled>Select Monthly Ad Spend</option>
+    <option>Less than $500</option>
+    <option>$500 - $1,000</option>
+    <option>$1,000 - $5,000</option>
+    <option>$5,000+</option>
+  </select>
+
+  <textarea name="goal" placeholder="Tell us your main goal" rows="5" style={inputStyle} />
+
+  <button className="btn btn-primary" type="submit">
+    Submit Request
+  </button>
+</form>
 
       <footer className="footer">
         <div className="container" style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
