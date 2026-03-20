@@ -8,7 +8,7 @@ export default function ContactPage() {
 
       <div style={card}>
         <p style={item}><strong>Email:</strong> support@yourdomain.com</p>
-        <p style={item}><strong>WhatsApp:</strong> +91XXXXXXXXXX</p>
+        <p style={item}><strong>WhatsApp:</strong> +918142140696</p>
         <p style={item}><strong>Business:</strong> AdPulse AI</p>
         <p style={item}>
           For support, partnerships, API questions, managed services, or business
