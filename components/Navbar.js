@@ -6,13 +6,28 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header style={header}>
-      <div style={container}>
+    <header style={{
+      position: "sticky",
+      top: 0,
+      background: "#fff",
+      borderBottom: "1px solid #e5e7eb",
+      zIndex: 1000
+    }}>
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "16px 20px",
+        maxWidth: "1200px",
+        margin: "0 auto"
+      }}>
         
-        <a href="/" style={logo}>AdPulse AI</a>
+        <a href="/" style={{ fontWeight: "700", fontSize: "20px" }}>
+          AdPulse AI
+        </a>
 
         {/* Desktop Menu */}
-        <nav className="desktop-menu" style={desktopMenu}>
+        <nav className="desktop-menu" style={{ gap: "20px" }}>
           <a href="/#features">Features</a>
           <a href="/#pricing">Pricing</a>
           <a href="/login">Login</a>
@@ -22,7 +37,12 @@ export default function Navbar() {
         <button
           className="menu-btn"
           onClick={() => setOpen(!open)}
-          style={menuBtn}
+          style={{
+            fontSize: "26px",
+            background: "none",
+            border: "none",
+            cursor: "pointer"
+          }}
         >
           ☰
         </button>
@@ -30,7 +50,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div style={mobileMenu}>
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+          padding: "20px",
+          borderTop: "1px solid #e5e7eb",
+          background: "#fff"
+        }}>
           <a href="/#features" onClick={() => setOpen(false)}>Features</a>
           <a href="/#pricing" onClick={() => setOpen(false)}>Pricing</a>
           <a href="/login" onClick={() => setOpen(false)}>Login</a>
@@ -39,47 +66,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-const header = {
-  position: "sticky",
-  top: 0,
-  background: "#fff",
-  borderBottom: "1px solid #e5e7eb",
-  zIndex: 1000
-};
-
-const container = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "16px 20px",
-  maxWidth: "1200px",
-  margin: "0 auto"
-};
-
-const logo = {
-  fontWeight: "700",
-  fontSize: "20px",
-  textDecoration: "none",
-  color: "#0f172a"
-};
-
-const desktopMenu = {
-  gap: "20px"
-};
-
-const menuBtn = {
-  fontSize: "26px",
-  background: "none",
-  border: "none",
-  cursor: "pointer"
-};
-
-const mobileMenu = {
-  display: "flex",
-  flexDirection: "column",
-  gap: "15px",
-  padding: "20px",
-  borderTop: "1px solid #e5e7eb",
-  background: "#fff"
-};
