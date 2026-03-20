@@ -114,6 +114,60 @@ export default function Page() {
           </div>
         </div>
       </section>
+                   <section style={{
+        padding: "60px 20px",
+        background: "linear-gradient(135deg,#0f172a,#1e293b)",
+        color: "#fff",
+        borderRadius: "20px",
+        marginTop: "40px"
+      }}>
+        <div style={{ maxWidth: "1000px", margin: "0 auto", textAlign: "center" }}>
+          
+          <h2 style={{ fontSize: "32px", fontWeight: "700" }}>
+            Fully Managed Google Ads (Done For You)
+          </h2>
+
+          <p style={{ marginTop: "10px", color: "#cbd5f5" }}>
+            Let our experts manage and scale your campaigns while you focus on growth.
+          </p>
+
+          <div style={{
+            marginTop: "30px",
+            background: "#111827",
+            padding: "30px",
+            borderRadius: "16px",
+            border: "1px solid #334155"
+          }}>
+            
+            <h3 style={{ fontSize: "24px", fontWeight: "600" }}>
+              Premium Managed Plan
+            </h3>
+
+            <ul style={{ marginTop: "20px", lineHeight: "1.8" }}>
+              <li>✔ Full Google Ads Setup</li>
+              <li>✔ Weekly Optimization</li>
+              <li>✔ ROAS Growth Strategy</li>
+            </ul>
+
+            <div style={{ marginTop: "20px" }}>
+              <a href="https://wa.me/919876543210"
+                style={{
+                  padding: "12px 24px",
+                  background: "#22c55e",
+                  color: "#000",
+                  borderRadius: "8px"
+                }}>
+                Contact on WhatsApp
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  )
+}
 
       <footer className="footer">
         <div className="container" style={{display:"flex",justifyContent:"space-between",gap:12,flexWrap:"wrap"}}>
