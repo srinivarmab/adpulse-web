@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "AdPulse AI",
@@ -10,30 +11,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
 
-        {/* HEADER */}
-        <header style={{
-          padding: "16px 20px",
-          borderBottom: "1px solid #e5e7eb",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center"
-        }}>
-          <a href="/" style={{ fontWeight: "700", fontSize: "20px" }}>
-            AdPulse AI
-          </a>
-
-          <nav style={{ display: "flex", gap: "15px" }}>
-            <a href="/">Home</a>
-            <a href="/#features">Features</a>
-            <a href="/#pricing">Pricing</a>
-            <a href="/login">Login</a>
-          </nav>
-        </header>
+        {/* GLOBAL NAVBAR */}
+        <Navbar />
 
         {/* PAGE CONTENT */}
         {children}
 
-        {/* FOOTER */}
+        {/* GLOBAL FOOTER */}
         <footer style={{
           marginTop: "40px",
           padding: "20px",
