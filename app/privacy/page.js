@@ -1,39 +1,83 @@
-export default function Privacy() {
+export default function PrivacyPage() {
   return (
-    <div style={{ padding: "40px", maxWidth: "900px", margin: "0 auto" }}>
-      <h1>Privacy Policy</h1>
-
-      <p>
+    <div style={wrap}>
+      <h1 style={h1}>Privacy Policy</h1>
+      <p style={p}>
         AdPulse AI respects your privacy and is committed to protecting your data.
+        This Privacy Policy explains what information we collect, how we use it,
+        and how we protect it.
       </p>
 
-      <h2>Information We Collect</h2>
-      <p>
-        When you use our platform, we may collect account information such as email,
-        and Google Ads data when you connect your account.
+      <h2 style={h2}>Information We Collect</h2>
+      <p style={p}>
+        We may collect your name, email address, website information, and any
+        information you submit through our forms. If you connect a Google Ads
+        account in the future, we may also collect Google Ads performance data
+        needed to provide our analysis and recommendations.
       </p>
 
-      <h2>How We Use Data</h2>
-      <p>
-        We use your data to analyze advertising performance, identify wasted spend,
-        and provide optimization recommendations.
+      <h2 style={h2}>How We Use Information</h2>
+      <p style={p}>
+        We use your information to provide ad performance insights, identify
+        wasted spend, generate optimization recommendations, respond to inquiries,
+        and improve our services.
       </p>
 
-      <h2>Google API Services</h2>
-      <p>
-        Our use of Google API Services complies with Google API Services User Data Policy.
-        We only access data necessary to provide our services.
+      <h2 style={h2}>Google API Services</h2>
+      <p style={p}>
+        When Google Ads integration is enabled, AdPulse AI will access only the
+        Google Ads data necessary to provide campaign analysis, reporting, and
+        optimization recommendations. We do not sell Google user data to third
+        parties.
       </p>
 
-      <h2>Data Security</h2>
-      <p>
-        We implement industry-standard measures to protect your data.
+      <h2 style={h2}>Data Security</h2>
+      <p style={p}>
+        We use reasonable technical and organizational safeguards to protect your
+        data. However, no online service can guarantee complete security.
       </p>
 
-      <h2>Contact</h2>
-      <p>
-        For questions, contact us at: support@yourdomain.com
+      <h2 style={h2}>Third-Party Services</h2>
+      <p style={p}>
+        We may use trusted third-party services such as hosting, analytics,
+        payment processors, form handling, and communication tools to operate the
+        platform.
+      </p>
+
+      <h2 style={h2}>Your Rights</h2>
+      <p style={p}>
+        You may contact us to request updates or deletion of your information,
+        subject to legal and operational requirements.
+      </p>
+
+      <h2 style={h2}>Contact</h2>
+      <p style={p}>
+        For privacy questions, contact us at: <strong>support@yourdomain.com</strong>
       </p>
     </div>
   );
 }
+
+const wrap = {
+  maxWidth: "900px",
+  margin: "0 auto",
+  padding: "48px 20px",
+  lineHeight: 1.8,
+  color: "#0f172a"
+};
+
+const h1 = {
+  fontSize: "40px",
+  marginBottom: "20px"
+};
+
+const h2 = {
+  fontSize: "24px",
+  marginTop: "28px",
+  marginBottom: "10px"
+};
+
+const p = {
+  color: "#475569",
+  margin: 0
+};
