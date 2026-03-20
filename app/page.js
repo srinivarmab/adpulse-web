@@ -3,7 +3,7 @@ import HeroPreview from "@/components/HeroPreview";
 import DashboardPreview from "@/components/DashboardPreview";
 
 const features = [
-  ["AI Campaign Audit", "Spot account issues, wasted spend, and hidden blockers in seconds."],
+  ["AI Google Ads Audit", "Spot account issues, wasted spend, and hidden blockers in seconds."],
   ["Wasted Spend Detection", "Catch weak keywords, search terms, and underperforming campaigns."],
   ["Geo + Device ROAS", "See which locations and devices deserve more or less budget."],
   ["Time ROAS Analysis", "Understand which hours and days generate better profitability."],
@@ -26,14 +26,15 @@ export default function Page() {
       <section className="hero">
         <div className="container hero-grid">
           <div>
-            <span className="eyebrow">AI-powered advertising intelligence</span>
-            <h1>Find Wasted Ad Spend with AI</h1>
+            <span className="eyebrow">AI-powered Google Ads intelligence</span>
+            <h1>Find Wasted Google Ads Spend with AI</h1>
             <p>
-              Connect your Google Ads account and instantly uncover wasted spend, weak keywords,
-              poor geo and device performance, and clear actions to improve ROAS.
+              Connect your Google Ads account and instantly uncover wasted spend,
+              weak keywords, poor geo and device performance, and clear actions to
+              improve ROAS.
             </p>
             <div className="hero-actions">
-              <a className="btn btn-primary" href="/login">Start Free AI Audit</a>
+              <a className="btn btn-primary" href="/login">Start Free Google Ads Audit</a>
               <a className="btn btn-secondary" href="#preview">See Product Preview</a>
             </div>
             <div style={{ display: "flex", gap: 18, flexWrap: "wrap", marginTop: 22, color: "#64748b", fontSize: 14 }}>
@@ -46,12 +47,22 @@ export default function Page() {
         </div>
       </section>
 
+      <section style={{ padding: "40px 20px", textAlign: "center" }}>
+        <h2>About AdPulse AI</h2>
+        <p style={{ maxWidth: "800px", margin: "0 auto", color: "#64748b", lineHeight: 1.8 }}>
+          AdPulse AI is an AI-powered Google Ads optimization platform that helps
+          advertisers identify wasted spend, improve ROAS, and scale campaigns
+          using data-driven insights and actionable recommendations.
+        </p>
+      </section>
+
       <section className="section" id="features">
         <div className="container">
           <h2>Designed to convert advertisers into long-term users</h2>
           <p className="lead">
-            AdPulse AI combines auditing, optimization signals, and decision-ready recommendations
-            into one clean SaaS product built for marketers, brands, and agencies.
+            AdPulse AI combines auditing, optimization signals, and decision-ready
+            recommendations into one clean SaaS product built for marketers,
+            brands, and agencies.
           </p>
           <div className="grid-3">
             {features.map(([title, text], i) => (
@@ -69,7 +80,8 @@ export default function Page() {
         <div className="container">
           <h2>Professional dashboard preview</h2>
           <p className="lead">
-            Show clear business value fast with health score, recommendations, alerts, and opportunity tracking.
+            Show clear business value fast with health score, recommendations,
+            alerts, and opportunity tracking.
           </p>
           <DashboardPreview />
         </div>
@@ -79,7 +91,8 @@ export default function Page() {
         <div className="container">
           <h2>Simple pricing that supports growth</h2>
           <p className="lead">
-            Start with a low-friction entry plan and upgrade as your optimization workflow becomes more advanced.
+            Start with a low-friction entry plan and upgrade as your optimization
+            workflow becomes more advanced.
           </p>
           <div className="grid-4">
             {plans.map(([name, price, text]) => (
@@ -173,7 +186,7 @@ export default function Page() {
 
             <div style={{ marginTop: "20px" }}>
               <a
-                href="https://wa.me/918142140696?text=Hi%20I%20want%20Google%20Ads%20management"
+                href="https://wa.me/919876543210?text=Hi%20I%20want%20Google%20Ads%20management"
                 style={{
                   display: "inline-block",
                   padding: "12px 24px",
@@ -196,22 +209,37 @@ export default function Page() {
           <div className="card" style={{ padding: 34, maxWidth: 900, margin: "0 auto" }}>
             <h2 style={{ marginTop: 0 }}>Request a Free Ads Growth Review</h2>
             <p style={{ color: "#64748b", lineHeight: 1.7 }}>
-              Tell us about your business and ad budget. We’ll review your setup and get back to you.
+              Tell us about your business and Google Ads budget. We’ll review
+              your setup and get back to you.
             </p>
 
-            <form style={{ display: "grid", gap: 16, marginTop: 20 }}>
-              <input type="text" placeholder="Your Name" style={inputStyle} />
-              <input type="email" placeholder="Your Email" style={inputStyle} />
-              <input type="text" placeholder="Website URL" style={inputStyle} />
-              <select style={inputStyle} defaultValue="">
+            <form
+              action="https://formsubmit.co/YOUR-EMAIL@gmail.com"
+              method="POST"
+              style={{ display: "grid", gap: 16, marginTop: 20 }}
+            >
+              <input type="hidden" name="_subject" value="New AdPulse Lead 🚀" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://adpulse-webd.vercel.app/" />
+
+              <input name="name" type="text" placeholder="Your Name" style={inputStyle} required />
+              <input name="email" type="email" placeholder="Your Email" style={inputStyle} required />
+              <input name="website" type="text" placeholder="Website URL" style={inputStyle} />
+              <select name="budget" style={inputStyle} defaultValue="" required>
                 <option value="" disabled>Select Monthly Ad Spend</option>
                 <option>Less than $500</option>
                 <option>$500 - $1,000</option>
                 <option>$1,000 - $5,000</option>
                 <option>$5,000+</option>
               </select>
-              <textarea placeholder="Tell us your main goal" rows="5" style={inputStyle} />
-              <button className="btn btn-primary" type="submit">Submit Request</button>
+              <textarea
+                name="goal"
+                placeholder="Tell us your Google Ads goal (ROAS, leads, scaling, etc.)"
+                rows="5"
+                style={inputStyle}
+                required
+              />
+              <button className="btn btn-primary" type="submit">Get Free Growth Review</button>
             </form>
           </div>
         </div>
@@ -231,49 +259,37 @@ export default function Page() {
             }}
           >
             <div>
-              <h2 style={{ margin: 0 }}>Stop wasting ad spend today.</h2>
+              <h2 style={{ margin: 0 }}>Stop wasting Google Ads spend today.</h2>
               <p style={{ margin: "8px 0 0", color: "#64748b", lineHeight: 1.7 }}>
-                Run your first audit, surface the most expensive problems, and make budget decisions with more confidence.
+                Run your first audit, surface the most expensive problems, and
+                make budget decisions with more confidence.
               </p>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a className="btn btn-primary" href="/login">Start Free AI Audit</a>
+              <a className="btn btn-primary" href="/login">Start Free Google Ads Audit</a>
               <a className="btn btn-secondary" href="#preview">See Dashboard</a>
             </div>
           </div>
         </div>
       </section>
-      <form action="https://formsubmit.co/srinivarmab@gmail.com" 
-  method="POST"
-  style={{ display: "grid", gap: 16, marginTop: 20 }}
->
 
-  <input type="hidden" name="_subject" value="New AdPulse Lead 🚀" />
-  <input type="hidden" name="_captcha" value="false" />
+      <footer
+        style={{
+          marginTop: "40px",
+          padding: "24px 20px",
+          borderTop: "1px solid #e5e7eb",
+          textAlign: "center"
+        }}
+      >
+        <div style={{ marginBottom: "10px" }}>
+          <strong>AdPulse AI</strong> — AI-powered Google Ads intelligence
+        </div>
 
-  <input name="name" type="text" placeholder="Your Name" style={inputStyle} />
-  <input name="email" type="email" placeholder="Your Email" style={inputStyle} />
-  <input name="website" type="text" placeholder="Website URL" style={inputStyle} />
-
-  <select name="budget" style={inputStyle} defaultValue="">
-    <option value="" disabled>Select Monthly Ad Spend</option>
-    <option>Less than $500</option>
-    <option>$500 - $1,000</option>
-    <option>$1,000 - $5,000</option>
-    <option>$5,000+</option>
-  </select>
-
-  <textarea name="goal" placeholder="Tell us your main goal" rows="5" style={inputStyle} />
-
-  <button className="btn btn-primary" type="submit">
-    Submit Request
-  </button>
-</form>
-
-      <footer className="footer">
-        <div className="container" style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-          <div><strong>AdPulse AI</strong> — AI-powered advertising intelligence</div>
-          <div>Home · Features · Pricing · Login</div>
+        <div style={{ display: "flex", gap: "15px", justifyContent: "center", flexWrap: "wrap" }}>
+          <a href="/">Home</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms</a>
+          <a href="/contact">Contact</a>
         </div>
       </footer>
     </>
