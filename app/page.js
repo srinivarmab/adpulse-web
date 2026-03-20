@@ -243,8 +243,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-                  <form 
-  action="https://formsubmit.co/srinivarmab@gmail.com" 
+      <form action="https://formsubmit.co/srinivarmab@gmail.com" 
   method="POST"
   style={{ display: "grid", gap: 16, marginTop: 20 }}
 >
