@@ -191,6 +191,32 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="section" id="lead-form">
+        <div className="container">
+          <div className="card" style={{ padding: 34, maxWidth: 900, margin: "0 auto" }}>
+            <h2 style={{ marginTop: 0 }}>Request a Free Ads Growth Review</h2>
+            <p style={{ color: "#64748b", lineHeight: 1.7 }}>
+              Tell us about your business and ad budget. We’ll review your setup and get back to you.
+            </p>
+
+            <form style={{ display: "grid", gap: 16, marginTop: 20 }}>
+              <input type="text" placeholder="Your Name" style={inputStyle} />
+              <input type="email" placeholder="Your Email" style={inputStyle} />
+              <input type="text" placeholder="Website URL" style={inputStyle} />
+              <select style={inputStyle} defaultValue="">
+                <option value="" disabled>Select Monthly Ad Spend</option>
+                <option>Less than $500</option>
+                <option>$500 - $1,000</option>
+                <option>$1,000 - $5,000</option>
+                <option>$5,000+</option>
+              </select>
+              <textarea placeholder="Tell us your main goal" rows="5" style={inputStyle} />
+              <button className="btn btn-primary" type="submit">Submit Request</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container">
           <div
@@ -227,3 +253,12 @@ export default function Page() {
     </>
   );
 }
+
+const inputStyle = {
+  width: "100%",
+  padding: "14px 16px",
+  borderRadius: "10px",
+  border: "1px solid #cbd5e1",
+  fontSize: "15px",
+  outline: "none"
+};
