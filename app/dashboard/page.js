@@ -1,77 +1,102 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Dashboard() {
-  const [accounts, setAccounts] = useState([]);
-  const [result, setResult] = useState(null);
   const router = useRouter();
-  const api = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 
   useEffect(() => {
-    const token = localStorage.getItem("adpulse_token");
-    const raw = localStorage.getItem("adpulse_user");
-    if (!token || !raw) return router.push("/login");
-    const user = JSON.parse(raw);
-    if (user.role !== "USER") return router.push(user.role === "ADMIN" ? "/admin" : "/super-admin");
-    fetch(api + "/api/accounts", { headers: { Authorization: "Bearer " + token } })
-      .then(r => r.json()).then(d => setAccounts(d.items || []));
+    const user = localStorage.getItem("user");
+    if (!user) {
+      router.push("/login");
+    }
   }, []);
 
-  async function connectMock() {
-    const token = localStorage.getItem("adpulse_token");
-    const res = await fetch(api + "/api/accounts/mock-connect", {
-      method: "POST",
-      headers: { Authorization: "Bearer " + token }
-    });
-    const data = await res.json();
-    setAccounts([data.item, ...accounts]);
-  }
-
-  async function syncNow(id) {
-    const token = localStorage.getItem("adpulse_token");
-    const res = await fetch(api + "/api/accounts/sync", {
-      method: "POST",
-      headers: { Authorization: "Bearer " + token, "Content-Type":"application/json" },
-      body: JSON.stringify({ connected_account_id: id })
-    });
-    const data = await res.json();
-    setResult(data);
-  }
-
   return (
-    <div className="container" style={{padding:"28px 0"}}>
-      <h1>User Dashboard</h1>
-      <p style={{color:"#64748b"}}>Connect a demo account, sync data, and generate audit insights.</p>
-
-      <div style={{display:"flex",gap:12,margin:"16px 0 24px"}}>
-        <button className="btn btn-primary" onClick={connectMock}>Connect Demo Google Ads Account</button>
+    <div style={{ padding: "20px" }}>
+      
+      {/* HEADER */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h1>Dashboard</h1>
+        <button
+          onClick={() => {
+            localStorage.removeItem("user");
+            window.location.href = "/login";
+          }}
+        >
+          Logout
+        </button>
       </div>
 
-      <div className="grid-4">
-        <div className="card" style={{padding:18}}><div style={{color:"#64748b"}}>Health Score</div><div style={{fontSize:28,fontWeight:800}}>{result?.audit?.health_score ?? 89}</div></div>
-        <div className="card" style={{padding:18}}><div style={{color:"#64748b"}}>Wasted Spend</div><div style={{fontSize:28,fontWeight:800,color:"#dc2626"}}>${result?.audit?.wasted_spend ?? 120}</div></div>
-        <div className="card" style={{padding:18}}><div style={{color:"#64748b"}}>Top Action</div><div style={{fontSize:22,fontWeight:800}}>Add negatives</div></div>
-        <div className="card" style={{padding:18}}><div style={{color:"#64748b"}}>Opportunity</div><div style={{fontSize:28,fontWeight:800,color:"#16a34a"}}>+$1,600</div></div>
+      {/* METRICS */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: "20px", marginTop: "20px" }}>
+        
+        <Card title="Ad Spend" value="$4,320" />
+        <Card title="Conversions" value="182" />
+        <Card title="ROAS" value="3.8x" />
+        <Card title="Wasted Spend" value="$780" />
+
       </div>
 
-      <div className="card" style={{padding:20,marginTop:24}}>
-        <h3 style={{marginTop:0}}>Connected Accounts</h3>
-        {!accounts.length ? <div style={{color:"#64748b"}}>No connected accounts yet.</div> : accounts.map((a) => (
-          <div key={a.id} style={{display:"flex",justifyContent:"space-between",gap:12,padding:"12px 0",borderBottom:"1px solid #e2e8f0"}}>
-            <div>
-              <div><b>{a.account_name}</b></div>
-              <div style={{color:"#64748b"}}>Customer ID: {a.customer_id}</div>
-            </div>
-            <button className="btn btn-primary" onClick={() => syncNow(a.id)}>Sync + Run Audit</button>
-          </div>
-        ))}
+      {/* ALERTS */}
+      <div style={{ marginTop: "30px" }}>
+        <h2>⚠️ Alerts</h2>
+
+        <div style={alertBox}>
+          High spend keyword: <b>"buy shoes online"</b> → Low conversions
+        </div>
+
+        <div style={alertBox}>
+          Campaign <b>"Search - Brand"</b> ROAS dropped by 30%
+        </div>
       </div>
 
-      {result ? <div className="card" style={{padding:20,marginTop:24}}>
-        <h3 style={{marginTop:0}}>Latest Audit Result</h3>
-        <pre style={{whiteSpace:"pre-wrap",fontSize:12,overflowX:"auto"}}>{JSON.stringify(result, null, 2)}</pre>
-      </div> : null}
+      {/* INSIGHTS */}
+      <div style={{ marginTop: "30px" }}>
+        <h2>📊 Insights</h2>
+
+        <div style={card}>
+          Best performing device: <b>Mobile (ROAS 4.2x)</b>
+        </div>
+
+        <div style={card}>
+          Top geo: <b>California (32% conversions)</b>
+        </div>
+
+        <div style={card}>
+          Best time: <b>Evening (6PM–10PM)</b>
+        </div>
+      </div>
+
     </div>
   );
 }
+
+function Card({ title, value }) {
+  return (
+    <div style={{
+      background: "#fff",
+      padding: "20px",
+      borderRadius: "12px",
+      boxShadow: "0 5px 15px rgba(0,0,0,0.05)"
+    }}>
+      <h4 style={{ margin: 0, color: "#64748b" }}>{title}</h4>
+      <h2 style={{ marginTop: "10px" }}>{value}</h2>
+    </div>
+  );
+}
+
+const alertBox = {
+  background: "#fee2e2",
+  padding: "12px",
+  borderRadius: "8px",
+  marginTop: "10px"
+};
+
+const card = {
+  background: "#f1f5f9",
+  padding: "14px",
+  borderRadius: "8px",
+  marginTop: "10px"
+};
