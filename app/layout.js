@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
 
         {/* ✅ WhatsApp Floating Button */}
         <a
-          href="https://wa.me/919876543210?text=Hi%20I%20want%20Google%20Ads%20management"
+          href="https://wa.me/918142140696?text=Hi%20I%20want%20Google%20Ads%20management"
           target="_blank"
           style={{
             position: "fixed",
