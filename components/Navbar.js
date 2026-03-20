@@ -9,26 +9,26 @@ export default function Navbar() {
     <header style={header}>
       <div style={container}>
         
-        {/* LOGO */}
-        <a href="/" style={logo}>
-          AdPulse AI
-        </a>
+        <a href="/" style={logo}>AdPulse AI</a>
 
-        {/* DESKTOP MENU */}
-        <nav style={desktopMenu}>
+        {/* Desktop Menu */}
+        <nav className="desktop-menu" style={desktopMenu}>
           <a href="/#features">Features</a>
           <a href="/#pricing">Pricing</a>
           <a href="/login">Login</a>
         </nav>
 
-        {/* MOBILE BUTTON */}
-        <button onClick={() => setOpen(!open)} style={menuBtn}>
+        {/* Mobile Button */}
+        <button
+          className="menu-btn"
+          onClick={() => setOpen(!open)}
+          style={menuBtn}
+        >
           ☰
         </button>
-
       </div>
 
-      {/* MOBILE MENU */}
+      {/* Mobile Menu */}
       {open && (
         <div style={mobileMenu}>
           <a href="/#features" onClick={() => setOpen(false)}>Features</a>
@@ -65,12 +65,11 @@ const logo = {
 };
 
 const desktopMenu = {
-  display: "none",
   gap: "20px"
 };
 
 const menuBtn = {
-  fontSize: "24px",
+  fontSize: "26px",
   background: "none",
   border: "none",
   cursor: "pointer"
@@ -81,5 +80,6 @@ const mobileMenu = {
   flexDirection: "column",
   gap: "15px",
   padding: "20px",
-  borderTop: "1px solid #e5e7eb"
+  borderTop: "1px solid #e5e7eb",
+  background: "#fff"
 };
