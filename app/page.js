@@ -204,46 +204,6 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="section" id="lead-form">
-        <div className="container">
-          <div className="card" style={{ padding: 34, maxWidth: 900, margin: "0 auto" }}>
-            <h2 style={{ marginTop: 0 }}>Request a Free Ads Growth Review</h2>
-            <p style={{ color: "#64748b", lineHeight: 1.7 }}>
-              Tell us about your business and Google Ads budget. We’ll review
-              your setup and get back to you.
-            </p>
-
-            <form
-              action="https://formsubmit.co/YOUR-EMAIL@gmail.com"
-              method="POST"
-              style={{ display: "grid", gap: 16, marginTop: 20 }}
-            >
-              <input type="hidden" name="_subject" value="New AdPulse Lead 🚀" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://adpulse-webd.vercel.app/" />
-
-              <input name="name" type="text" placeholder="Your Name" style={inputStyle} required />
-              <input name="email" type="email" placeholder="Your Email" style={inputStyle} required />
-              <input name="website" type="text" placeholder="Website URL" style={inputStyle} />
-              <select name="budget" style={inputStyle} defaultValue="" required>
-                <option value="" disabled>Select Monthly Ad Spend</option>
-                <option>Less than $500</option>
-                <option>$500 - $1,000</option>
-                <option>$1,000 - $5,000</option>
-                <option>$5,000+</option>
-              </select>
-              <textarea
-                name="goal"
-                placeholder="Tell us your Google Ads goal (ROAS, leads, scaling, etc.)"
-                rows="5"
-                style={inputStyle}
-                required
-              />
-              <button className="btn btn-primary" type="submit">Get Free Growth Review</button>
-            </form>
-          </div>
-        </div>
-      </section>
 
       <section className="section">
         <div className="container">
